@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sum=100;
+        var a;
+        do {
+            a = prompt('请输入您要的操作：\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            if (a == 1) {
+            var save = prompt('请您输入存的钱数：');
+            sum += Number(save);
+            alert('您现在的钱数是：' + sum);
+        }
+        else if (a == 2) {
+            var take = prompt('请您输入取的钱数：');
+            if (take > sum) {
+                alert('余额不足！');
+                continue;
+            }
+            sum -= Number(take);
+            alert('您现在的钱数是：' + sum);
+        }
+        else if (a == 3) {
+            alert('您现在的钱数是：' + sum);
+        }
+        else if (a == 4) {
+            alert('您正在退出！');
+            break;
+        }
+        else {
+            alert('无效操作！');
+        }
+        } while(a !== 4)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
