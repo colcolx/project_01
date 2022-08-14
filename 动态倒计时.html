@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 50px;
+            width: 165px;
+            margin: 100px auto;
+        }
+        span {
+            display: block;
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+            background-color: black;
+            color: #ccc;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2022-5-22 18:00:00'); //返回用户输入时间
+        countdown();
+        //开启定时器
+        setInterval(countdown , 1000);
+        function countdown(time) {
+            var nowTime = +new Date(); //返回当前时间
+            var remainTime = (inputTime - nowTime) / 1000;
+            var h = parseInt(remainTime/60/60);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(remainTime/60%60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(remainTime%60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+</html>
